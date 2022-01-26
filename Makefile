@@ -6,7 +6,7 @@
 #    By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 15:16:49 by dimioui           #+#    #+#              #
-#    Updated: 2022/01/26 15:39:34 by dimioui          ###   ########.fr        #
+#    Updated: 2022/01/26 15:42:10 by dimioui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,8 @@ define removing
 	@echo "$(shell tput bold)$(shell tput setaf 2)√$(shell tput sgr0)"
 endef
 
+DONE		= @echo "$(shell tput bold)$(shell tput setaf 2)√$(shell tput sgr0)"
+
 SRCS		= $(addprefix srcs/, \
 				main.c \
 				)
@@ -50,7 +52,7 @@ NAME		= push_swap
 
 RM			= rm -f
 
-CC			= CC
+CC			= cc
 
 CFLAGS		= -Wall -Wextra -Werror -g
 
