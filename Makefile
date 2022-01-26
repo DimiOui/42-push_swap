@@ -6,7 +6,7 @@
 #    By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 15:16:49 by dimioui           #+#    #+#              #
-#    Updated: 2022/01/26 15:25:45 by dimioui          ###   ########.fr        #
+#    Updated: 2022/01/26 15:39:34 by dimioui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ define removing
 endef
 
 SRCS		= $(addprefix srcs/, \
+				main.c \
 				)
 
 OBJS		= $(SRCS:.c=.o)
