@@ -60,8 +60,8 @@ Might want to parse each number and put them on stack A like :
 
 Check the input (the args).
 ```
-	if only one arg ex : "2 3 1", it's an error. Each arg should be a number.
-	if arg looks like : 2 3 1, then each argv[] is a number.
+if only one arg ex : "2 3 1", it's an error. Each arg should be a number.
+if arg looks like : 2 3 1, then each argv[] is a number.
 
 // need to check if numbers are correct, no duplicates etc (done after loading into stack A)...
 // need to handle errors that could look like this 2- 3 1, 2  3 1,  2 - 3 1, etc...
@@ -78,3 +78,4 @@ else
 ```
 
 For the algo, I'll use the Radx sort (check https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
+Check merge sorting algorithm and quick sorting algorithm too
