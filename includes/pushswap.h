@@ -6,12 +6,14 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:31:00 by dimioui           #+#    #+#             */
-/*   Updated: 2022/01/26 15:32:21 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/01/31 17:28:33 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 # include "libft.h"
 
 #endif

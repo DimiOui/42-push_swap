@@ -47,3 +47,34 @@ Ressources :
 
 https://github.com/VBrazhnik/Push_swap/wiki/Algorithm
 https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
+https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
+
+-----------------------------------------------------------------------------------
+
+Sorting a list of 3 random numbers :
+
+./push_swap 2 3 1
+
+Here we have 3 arguments in our push_swap program.
+Might want to parse each number and put them on stack A like :
+
+Check the input (the args).
+```
+	if only one arg ex : "2 3 1", it's an error. Each arg should be a number.
+	if arg looks like : 2 3 1, then each argv[] is a number.
+
+// need to check if numbers are correct, no duplicates etc (done after loading into stack A)...
+// need to handle errors that could look like this 2- 3 1, 2  3 1,  2 - 3 1, etc...
+```
+
+Once the input has been checked, load it into stack A.
+Once stack A is loaded we check duplicates.
+Once stack A is loaded, and we checked the duplicates, check if the list is sorted. If so, the program ends. (```A_is_sorted()```)
+```
+if (stack_A <= 5)
+	sort_small_stack;
+else
+	sort_big_stack;
+```
+
+For the algo, I'll use the Radx sort (check https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
