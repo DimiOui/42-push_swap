@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:37:52 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/01 18:51:01 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/01 19:04:25 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,12 @@ int	parsing(int ac, char **av)
 	i = 1;
 	j = 0;
 	if (ac < 2)
-	{
-		printf("bonjourz\n");
 		return (0);
-	}
-	while (i < (ac - 1))
+	while (i < ac)
 	{
 		if (!ft_check_nb(j, av[i])
 			|| !ft_check_space(av[i]) || !ft_check_sign(av[i]))
 		{
-			printf("bonjour\n");
 			//error("Error\n");
 			return (0);
 		}
@@ -57,7 +53,10 @@ int	main (int ac, char **av)
 	argv_to_stack_a(stack_a, av);
 	if (!stack_a)
 		return (0);
+	printf("Tout va bien\n");
 	return (0);
 }
 
 //	PARSING IS NOT WORKING WITH AC SMH, CHECK PRINTFS HERE
+// CHECK DOUBLE NOT WORKING
+// USE GDB ASAP LINE 34
