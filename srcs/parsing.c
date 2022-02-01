@@ -5,119 +5,116 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/01 11:49:00 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/01 16:23:33 by dimioui          ###   ########.fr       */
+/*   Created: 2022/02/01 17:19:57 by dimioui           #+#    #+#             */
+/*   Updated: 2022/02/01 18:47:02 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	*ft_sort_int_tab(int *tab, int size)
+int	ft_check_space(char *str)
 {
 	int	i;
-	int	swap;
 
-	i = 1;
-	while (i < size)
+	i = 0;
+	while (str[i])
 	{
-		if (tab[i] < tab[i - 1])
+		if (str[i] == ' ')
 		{
-			swap = tab[i];
-			tab[i] = tab[i - 1];
-			tab[i - 1] = swap;
-			i = 0;
+			if (str[i + 1] == ' ' || str[i + 1] == '-' || str[i + 1] == '\0'
+				|| str[i + 1] >= '0' || str[i + 1] <= '9')
+				i++;
+			else
+				return (0);
 		}
 		i++;
 	}
-	return (tab);
+	return (1);
 }
 
-int	ft_get_index(int *tab, int i, int len)
+int	ft_check_sign(char *str)
 {
-	int	*tmp_tab;
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '-')
+		{
+			if (str[i + 1] >= '0' && str[i + 1] <= '9')
+				i++;
+			else
+				return (0);
+		}
+		i++;
+	}
+	return (1);
+}
+
+int	ft_check_nb(int i, char *str)
+{
+	int	check;
+
+	check = 0;
+	if (str[0] == '\0')
+		return (1);
+	while (str[i])
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			if (str[i + 1] == ' ' || str[i + 1] == '\0'
+				||(str[i + 1] >= '0' && str[i + 1] <= '9'))
+			{
+				i++;
+				check++;
+			}
+			else
+				return (0);
+		}
+		i++;
+	}
+	if (check == 0)
+		return (0);
+	return (1);
+}
+
+int	ft_check_double(int ac, char **av)
+{
+	int	i;
 	int	j;
-	int	ret;
 
-	j = 0;
-	tmp_tab = malloc(sizeof(int) * len);
-	if (!tmp_tab)
-		return (-1);
-	while (j < len)
-	{
-		tmp_tab[j] = tab[j];
-		j++;
-	}
-	tmp_tab = ft_sort_int_tab(tmp_tab, len);
-	j = 0;
-	while (j < len)
-	{
-		if (tmp_tab[j] == tab[i])
-			ret = j;
-		j++;
-	}
-	free(tmp_tab);
-	return (ret);
-}
-
-t_list	*ft_fill_link(int *tab, int i, int len)
-{
-	t_list *link;
-	int		index;
-
-	index = ft_get_index(tab, i, len);
-	if (index == -1)
-		return (NULL);
-	link = malloc(sizeof (t_list));
-	if (!link)
-		return (NULL);
-	link->content = tab[i];
-	link->index = index;
-	link->next = NULL;
-	link->prev = NULL;
-	return (link);
-}
-
-t_list	*ft_lst_init(t_list *lst, int *tab, int len)
-{
-	int	i;
-	t_list	*new_link;
-
-	new_link = NULL;
 	i = 0;
-	while (i < len)
-	{
-		new_link = ft_fill_link(tab, i, len);
-		if (!new_link)
-		{
-			ft_lstclear_swap(&lst);
-			return (NULL);
-		}
-		ft_lstadd_back_swap(&lst, new_link);
-		i++;
-	}
-	return (lst);
-}
-
-t_list	*argv_to_stack_a(t_list *lst, char **av)
-{
-	int	*tab;
-	int	i;
-	int	len;
-
 	av++;
-	len = 0;
-	while (av[len])
-		len++;
-	tab = malloc(sizeof(int *) * len);
-	if (!tab)
-		return (NULL);
-	i = 0;
-	while (av[i])
+	while (i < (ac - 1))
 	{
-		tab[i] = ft_atoi(av[i]);
+		j = i + 1;
+		while (j < (ac - 1))
+		{
+			if (av[j] == av[i])
+				return (0);
+			j++;
+		}
 		i++;
 	}
-	lst = ft_lst_init(lst, tab, len);
-	free(tab);
-	return (lst);
+	return (1);
+}
+
+int	ft_check_order(int ac, char **av)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 1;
+	av++;
+	while (j < (ac - 1))
+	{
+		if (av[i] < av[j])
+		{
+			i++;
+			j++;
+		}
+		return (1);
+	}
+	return (0);
 }
