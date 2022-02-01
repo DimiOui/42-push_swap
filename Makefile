@@ -6,7 +6,7 @@
 #    By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 15:16:49 by dimioui           #+#    #+#              #
-#    Updated: 2022/01/26 15:42:10 by dimioui          ###   ########.fr        #
+#    Updated: 2022/02/01 15:41:58 by dimioui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ DONE		= @echo "$(shell tput bold)$(shell tput setaf 2)√$(shell tput sgr0)"
 
 SRCS		= $(addprefix srcs/, \
 				main.c \
+				parsing.c \
 				)
 
 OBJS		= $(SRCS:.c=.o)

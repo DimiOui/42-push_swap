@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_back_swap.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 12:15:03 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/02/01 16:26:33 by dimioui          ###   ########.fr       */
+/*   Created: 2021/11/29 10:38:34 by dpaccagn          #+#    #+#             */
+/*   Updated: 2022/02/01 15:35:10 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(int))
+void	ft_lstadd_back_swap(t_list **alst, t_list *new)
 {
-	t_list	*tmp;
-	t_list	*ptr;
+	t_list	*last;
 
-	if (!del || !*lst)
+	if (!new)
 		return ;
-	ptr = *lst;
-	while (ptr)
+	if (*alst)
 	{
-		tmp = ptr -> next;
-		ft_lstdelone(ptr, del);
-		ptr = tmp;
+		last = ft_lstlast(*alst);
+		last->next = new;
+		new->prev = last;
 	}
-	*lst = (NULL);
+	else
+	{
+		*alst = new;
+		new->next = NULL;
+		new->prev = NULL;
+	}
 }
 
 /* **************************************************************************
-This function goes through all the links of your linked list and deletes all
-of its content then frees all the memory allocated. (with lstdelone).
-It then creates a pointer to NULL at the beginning of the list
+Adds a new t_list at the end of the linked list.
+We first create our new element "last", then we check wether our list exists
+If it is, our last will be the last element of the linked list,
+then we point next from last to a new element.
+If there is no list, we create a new element.
 °************************************************************************** */

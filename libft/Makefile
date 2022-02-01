@@ -6,7 +6,7 @@
 #    By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 14:49:36 by dpaccagn          #+#    #+#              #
-#    Updated: 2022/01/25 18:05:47 by dimioui          ###   ########.fr        #
+#    Updated: 2022/02/01 16:10:14 by dimioui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,9 +47,7 @@ SRCS		=	$(addprefix srcs/, \
 				ft_putnbr_fd.c\
 				ft_printf.c\
 				ft_strjoin_char.c\
-				)
-
-LST			=	$(addprefix srcs/, \
+				ft_atoll.c\
 				ft_lstnew.c\
 				ft_lstadd_front.c\
 				ft_lstsize.c\
@@ -59,11 +57,11 @@ LST			=	$(addprefix srcs/, \
 				ft_lstclear.c\
 				ft_lstiter.c\
 				ft_lstmap.c\
+				ft_lstadd_back_swap.c\
+				ft_lstclear_swap.c\
 				)
 
 OBJS		= ${SRCS:.c=.o}
-
-BONUS_OBJS	= ${LST:.c=.o}
 
 NAME		= libft.a
 
@@ -81,9 +79,6 @@ ${NAME}:	${OBJS}
 
 all:		${NAME}
 
-bonus:		${OBJS} ${BONUS_OBJS}
-			@ar rcsv ${NAME} ${OBJS} ${BONUS_OBJS} > /dev/null
-
 clean:
 			${RM} ${OBJS} ${BONUS_OBJS}
 
@@ -92,4 +87,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: bonus re clean fclean
+.PHONY: re clean fclean
