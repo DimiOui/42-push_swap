@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 17:19:57 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/01 19:02:42 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 01:17:28 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	ft_check_double(int ac, char **av)
 		j = i + 1;
 		while (j < ac)
 		{
-			if (av[j] == av[i])
+			if (ft_atoi(av[j]) == ft_atoi(av[i]))
 				return (0);
 			j++;
 		}
@@ -103,17 +103,17 @@ int	ft_check_order(int ac, char **av)
 	int	i;
 	int	j;
 
-	i = 0;
-	j = 1;
-	av++;
-	while (j < (ac - 1))
+	i = 2;
+	while (i < ac)
 	{
-		if (av[i] < av[j])
+		j = i - 1;
+		if (ft_atoi(av[j]) < ft_atoi(av[i]))
 		{
 			i++;
 			j++;
 		}
-		return (1);
+		else
+			return (1);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 10:25:17 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/02/01 16:44:35 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 01:23:50 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strdup(const char *src);
 char		*ft_strjoin_char(char *str, char c);
 long long	ft_atoll(const char *str);
+void		ft_puterror(char *str);
 
 // PART 2
 
