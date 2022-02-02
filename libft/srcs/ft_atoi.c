@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dpaccagn <dpaccagn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 11:08:12 by dpaccagn          #+#    #+#             */
-/*   Updated: 2021/11/29 15:07:15 by dpaccagn         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:34:03 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ int	ft_atoi(const char *str)
 }
 
 /* **************************************************************************
-This function takes a string as a parameter and returns it as a string
+This function takes a string as a parameter and returns it as an int
 °************************************************************************** */

@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:31:00 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/01 18:37:13 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 13:59:59 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_lst_init(t_list *lst, int *tab, int len);
 t_list	*ft_fill_link(int *tab, int i, int len);
 int		ft_get_index(int *tab, int i, int len);
 int		*ft_sort_int_tab(int *tab, int size);
-int		parsing(int ac, char **av);
+int		ft_parsing(int ac, char **av);
 
 //	Parsing
 int	ft_check_space(char *str);
@@ -32,5 +32,13 @@ int	ft_check_sign(char *str);
 int	ft_check_nb(int i, char *str);
 int	ft_check_double(int ac, char **av);
 int	ft_check_order(int ac, char **av);
+
+//	Sort small
+void	ft_sa(t_list *stack_a);
+void	ft_ra(t_list *stack_a);
+void	ft_rra(t_list *stack_a);
+void	ft_sa_ra(t_list *stack_a);
+void	ft_sa_rra(t_list *stack_a);
+void	ft_resolution3(t_list *stack_a);
 
 #endif

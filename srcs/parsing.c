@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 17:19:57 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 01:17:28 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 11:36:19 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ int	ft_check_double(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
+		if (ft_atoll(av[i]) > INT_MAX || ft_atoll(av[i]) < INT_MIN)
+			return (0);
 		j = i + 1;
 		while (j < ac)
 		{

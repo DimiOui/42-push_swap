@@ -6,7 +6,7 @@
 #    By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 15:16:49 by dimioui           #+#    #+#              #
-#    Updated: 2022/02/01 17:36:13 by dimioui          ###   ########.fr        #
+#    Updated: 2022/02/02 14:00:18 by dimioui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,8 @@ SRCS		= $(addprefix srcs/, \
 				main.c \
 				stack_a.c \
 				parsing.c \
+				sort_small.c\
+				sort_small_utils.c\
 				)
 
 OBJS		= $(SRCS:.c=.o)
