@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:37:52 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 01:26:04 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 01:37:32 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,14 @@ int	main (int ac, char **av)
 	//	b = NULL;
 	if (!parsing(ac, av))
 		return (0);
-	argv_to_stack_a(stack_a, av);
+	stack_a = argv_to_stack_a(stack_a, av);
 	if (!stack_a)
 		return (0);
-	printf("Tout va bien\n");
+	while (stack_a)
+	{
+		printf("%d\n", stack_a->content);
+		stack_a = stack_a->next;
+	}
 	return (0);
 }
 
