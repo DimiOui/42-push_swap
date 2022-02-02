@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:37:52 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 17:29:45 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 18:07:06 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_algo_choice(t_list *stack_a, t_list *stack_b)
 {
 	int	size;
-	(void)stack_b;
 
 	size = ft_lstsize(stack_a);
 	if (size == 2)
@@ -54,7 +53,7 @@ int	ft_parsing(int ac, char **av)
 	return (1);
 }
 
-int	main (int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
@@ -67,15 +66,13 @@ int	main (int ac, char **av)
 	if (!stack_a)
 		return (0);
 	ft_algo_choice(stack_a, stack_b);
-		while (stack_a)
+	while (stack_a)
 	{
 		printf("%d\n", stack_a->content);
 		stack_a = stack_a->next;
 	}
 	ft_lstclear_swap(&stack_a);
 	ft_lstclear_swap(&stack_b);
-	//	CHECK BELOW COMMENTARY
-	//	then free stack_a and stack_b
 	return (0);
 }
 

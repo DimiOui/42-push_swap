@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 11:08:12 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/02/01 12:41:23 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 17:54:38 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static long long	ft_isspace(char c)
 
 long long	ft_atoll(const char *str)
 {
-	int	i;
+	int			i;
 	long long	result;
 	long long	sign;
 

@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 01:20:59 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 17:04:16 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 18:01:51 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_resolution3(t_list *stack_a)
 	num1 = stack_a->index;
 	num2 = stack_a->next->index;
 	num3 = stack_a->next->next->index;
-
 	if (num1 > num2 && num1 > num3 && num2 > num3)
 		ft_sa_rra(stack_a);
 	else if (num1 > num2 && num1 > num3 && num2 < num3)

@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:49:00 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 15:01:14 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 18:01:00 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_get_index(int *tab, int i, int len)
 
 t_list	*ft_fill_link(int *tab, int i, int len)
 {
-	t_list *link;
+	t_list	*link;
 	int		index;
 
 	index = ft_get_index(tab, i, len);
@@ -79,7 +79,7 @@ t_list	*ft_fill_link(int *tab, int i, int len)
 
 t_list	*ft_lst_init(t_list *lst, int *tab, int len)
 {
-	int	i;
+	int		i;
 	t_list	*new_link;
 
 	new_link = NULL;

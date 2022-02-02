@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 10:25:17 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/02/02 17:19:18 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 17:59:43 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,19 @@ void		ft_puterror(char *str);
 void		ft_swap(int *n1, int *n2);
 int			ft_atoi_strict(const char *str, int *result);
 
-
 // PART 2
 
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtrim(char const *s1, char const *set);
-char	**ft_split(char const *str, char charset);
-char	*ft_itoa(int nb);
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *str, int fd);
-void	ft_putendl_fd(char *str, int fd);
-void	ft_putnbr_fd(int nb, int fd);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strtrim(char const *s1, char const *set);
+char		**ft_split(char const *str, char charset);
+char		*ft_itoa(int nb);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void		ft_striteri(char *s, void (*f)(unsigned int, char *));
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char *str, int fd);
+void		ft_putendl_fd(char *str, int fd);
+void		ft_putnbr_fd(int nb, int fd);
 
 // BONUS
 
@@ -73,16 +72,16 @@ typedef struct s_list
 	struct s_list	*prev;
 }	t_list;
 
-t_list	*ft_lstnew(int content);
-void	ft_lstadd_front(t_list **alst, t_list *new);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **alst, t_list *new);
-void	ft_lstdelone(t_list *lst, void (*del)(int));
-void	ft_lstclear(t_list **lst, void (*del)(int));
-void	ft_lstiter(t_list *lst, void (*f)(int));
-t_list	*ft_lstmap(t_list *lst, int(*f)(int), void (*del)(int));
-void	ft_lstclear_swap(t_list **lst);
-void	ft_lstadd_back_swap(t_list **alst, t_list *new);
+t_list		*ft_lstnew(int content);
+void		ft_lstadd_front(t_list **alst, t_list *new);
+int			ft_lstsize(t_list *lst);
+t_list		*ft_lstlast(t_list *lst);
+void		ft_lstadd_back(t_list **alst, t_list *new);
+void		ft_lstdelone(t_list *lst, void (*del)(int));
+void		ft_lstclear(t_list **lst, void (*del)(int));
+void		ft_lstiter(t_list *lst, void (*f)(int));
+t_list		*ft_lstmap(t_list *lst, int *(*f)(int), void (*del)(int));
+void		ft_lstclear_swap(t_list **lst);
+void		ft_lstadd_back_swap(t_list **alst, t_list *new);
 
 #endif

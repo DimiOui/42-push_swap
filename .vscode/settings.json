@@ -18,5 +18,8 @@
 		"titleBar.inactiveBackground": "#4285f499",
 		"titleBar.inactiveForeground": "#e7e7e799"
 	},
-	"peacock.remoteColor": "#4285F4"
+	"peacock.remoteColor": "#4285F4",
+	"files.associations": {
+		"pushswap.h": "c"
+	}
 }

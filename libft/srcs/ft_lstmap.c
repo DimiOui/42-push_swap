@@ -6,13 +6,13 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:13:10 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/02/01 16:43:30 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 18:04:56 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, int(*f)(int), void (*del)(int))
+t_list	*ft_lstmap(t_list *lst, int *(*f)(int), void (*del)(int))
 {
 	t_list	*buffer;
 	t_list	*newlist;
@@ -20,7 +20,7 @@ t_list	*ft_lstmap(t_list *lst, int(*f)(int), void (*del)(int))
 	newlist = NULL;
 	while (lst)
 	{
-		buffer = ft_lstnew((*f)(lst -> content));
+		buffer = ft_lstnew(*(*f)(lst -> content));
 		if (!buffer)
 		{
 			ft_lstclear(&newlist, del);
