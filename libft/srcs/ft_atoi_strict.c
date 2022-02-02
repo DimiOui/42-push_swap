@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_strict.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 11:08:12 by dpaccagn          #+#    #+#             */
-/*   Updated: 2022/02/02 17:09:32 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 17:26:11 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,33 +26,29 @@ static int	ft_isspace(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi_strict(const char *str, int *result)
 {
-	int	i;
-	int	result;
 	int	sign;
 
-	i = 0;
-	result = 0;
 	sign = 1;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	*result = 0;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		{
-			if (str[i] == '-')
-				sign *= (-1);
-		}
-		i++;
+		if (*str == '-')
+			sign *= (-1);
+		str++;
 	}
-	while (ft_isnum(str[i]))
+	while (ft_isnum(*str))
 	{
-		result = (result * 10) + (str[i] - '0');
-		i++;
+		if (((int)((unsigned int)*result * 10) / 10) != *result)
+			return (1);
+		*result = (*result * 10) + (*str - '0');
+		str++;
 	}
-	return (result * sign);
+	if (*result - (sign < 0) < 0 && *result)
+		return (1);
+	*result = *result * sign;
+	return (0);
 }
-
-/* **************************************************************************
-This function takes a string as a parameter and returns it as an int
-°************************************************************************** */

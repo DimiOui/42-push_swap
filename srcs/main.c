@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:37:52 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 15:38:09 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 17:29:45 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_algo_choice(t_list *stack_a, t_list *stack_b)
 		ft_resolution4(stack_a, stack_b);
 	else if (size == 5)
 		ft_resolution5(stack_a, stack_b);
-		//not working properly yet
 	else
 		printf("Nope\n");
 }
@@ -87,6 +86,6 @@ int	main (int ac, char **av)
 // for size == 4 -> same as above
 // size == 5 -> same as above
 // size == 100 -> insertion sort
-// else, radix sort.
+// else, radx sort
 
 // TEST WITH A LONG OVERFLOW FOR INT LIMITS

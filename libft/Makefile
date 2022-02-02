@@ -6,7 +6,7 @@
 #    By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 14:49:36 by dpaccagn          #+#    #+#              #
-#    Updated: 2022/02/02 13:31:29 by dimioui          ###   ########.fr        #
+#    Updated: 2022/02/02 17:23:24 by dimioui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRCS		=	$(addprefix srcs/, \
 				ft_lstclear_swap.c\
 				ft_puterror.c\
 				ft_swap.c\
+				ft_atoi_strict.c\
 				)
 
 OBJS		= ${SRCS:.c=.o}

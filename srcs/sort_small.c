@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 01:20:59 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 15:53:53 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 17:04:16 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 void	ft_resolution3(t_list *stack_a)
 {
-	if (stack_a->index > stack_a->next->index
-		&& stack_a->index > stack_a->next->next->index
-		&& stack_a->next->index > stack_a->next->next->index)
+	int	num1;
+	int	num2;
+	int	num3;
+
+	num1 = stack_a->index;
+	num2 = stack_a->next->index;
+	num3 = stack_a->next->next->index;
+
+	if (num1 > num2 && num1 > num3 && num2 > num3)
 		ft_sa_rra(stack_a);
-	else if (stack_a->index > stack_a->next->index
-		&& stack_a->index > stack_a->next->next->index
-		&& stack_a->next->index < stack_a->next->next->index)
+	else if (num1 > num2 && num1 > num3 && num2 < num3)
 		ft_ra(stack_a);
-	else if (stack_a->index > stack_a->next->index
-		&& stack_a->index < stack_a->next->next->index
-		&& stack_a->next->index < stack_a->next->next->index)
+	else if (num1 > num2 && num1 < num3 && num2 < num3)
 		ft_sa(stack_a);
-	else if (stack_a->index < stack_a->next->index
-		&& stack_a->index < stack_a->next->next->index
-		&& stack_a->next->index > stack_a->next->next->index)
+	else if (num1 < num2 && num1 < num3 && num2 > num3)
 		ft_sa_ra(stack_a);
-	else if (stack_a->index < stack_a->next->index
-		&& stack_a->index > stack_a->next->next->index
-		&& stack_a->next->index > stack_a->next->next->index)
+	else if (num1 < num2 && num1 > num3 && num2 > num3)
 		ft_rra(stack_a);
 	else
 		return ;
