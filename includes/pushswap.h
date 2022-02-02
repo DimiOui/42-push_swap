@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:31:00 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 15:02:45 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 15:35:22 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_check_order(int ac, char **av);
 
 //	Sort small
 void	ft_sa(t_list *stack_a);
+void	ft_sb(t_list *stack_b);
 void	ft_ra(t_list *stack_a);
 void	ft_rra(t_list *stack_a);
 void	ft_sa_ra(t_list *stack_a);
@@ -45,5 +46,6 @@ void	ft_push_newlink(t_list **stack_a, t_list **stack_b);
 void	ft_push_linkexists(t_list **stack_a, t_list **stack_b);
 void	ft_resolution3(t_list *stack_a);
 void	ft_resolution4(t_list *stack_a, t_list *stack_b);
+void	ft_resolution5(t_list *stack_a, t_list *stack_b);
 
 #endif

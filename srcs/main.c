@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:37:52 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 15:05:33 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 15:38:09 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ void	ft_algo_choice(t_list *stack_a, t_list *stack_b)
 		ft_resolution3(stack_a);
 	else if (size == 4)
 		ft_resolution4(stack_a, stack_b);
+	else if (size == 5)
+		ft_resolution5(stack_a, stack_b);
+		//not working properly yet
 	else
 		printf("Nope\n");
 }
