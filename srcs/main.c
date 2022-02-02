@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:37:52 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 01:37:32 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 01:44:09 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ int	parsing(int ac, char **av)
 		return (0);
 	while (i < ac)
 	{
-		if (!ft_check_nb(j, av[i])
-			|| !ft_check_space(av[i]) || !ft_check_sign(av[i]))
+		if (!ft_check_nb(j, av[i]) || !ft_check_space(av[i])
+			|| !ft_check_sign(av[i]) || !ft_check_double(ac, av))
 		{
 			ft_puterror("Error\n");
 			return (0);
 		}
 		i++;
 	}
-	if (!ft_check_double(ac, av) || !ft_check_order(ac, av))
+	if (!ft_check_order(ac, av))
 		return (0);
 	return (1);
 }
