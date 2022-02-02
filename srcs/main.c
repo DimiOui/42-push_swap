@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:37:52 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 01:44:09 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 01:49:07 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,21 @@ int	main (int ac, char **av)
 	stack_a = argv_to_stack_a(stack_a, av);
 	if (!stack_a)
 		return (0);
-	while (stack_a)
-	{
-		printf("%d\n", stack_a->content);
-		stack_a = stack_a->next;
-	}
+	//while (stack_a)
+	//{
+	//	printf("%d\n", stack_a->content);
+	//	stack_a = stack_a->next;
+	//}
+	//	CHECK BELOW COMMENTARY
+	//	then free stack_a and stack_b
 	return (0);
 }
 
-//	PARSING IS NOT WORKING WITH AC SMH, CHECK PRINTFS HERE
-// CHECK DOUBLE NOT WORKING
-// USE GDB ASAP LINE 34
+// now need to do the algorithm
+// algochoice function will decide which sorting algorithm we'll chose
+// for size == 2 -> we do 'sa'
+// for size == 3 -> we'll try to implement a simple algo
+// for size == 4 -> same as above
+// size == 5 -> same as above
+// size == 100 -> insertion sort
+// else, radix sort.
