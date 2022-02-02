@@ -6,55 +6,11 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 01:20:59 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 14:17:22 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/02 15:13:21 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-void	ft_sa(t_list *stack_a)
-{
-	ft_swap(&(stack_a->content), &(stack_a->next->content));
-	ft_swap(&(stack_a->index), &(stack_a->next->index));
-	ft_putstr_fd("sa\n", 1);
-}
-
-void	ft_ra(t_list *stack_a)
-{
-	int	content_tmp;
-	int	index_tmp;
-
-	content_tmp = stack_a->content;
-	index_tmp = stack_a->index;
-	while (stack_a->next)
-	{
-		stack_a->content = stack_a->next->content;
-		stack_a->index = stack_a->next->index;
-		stack_a = stack_a->next;
-	}
-	stack_a->content = content_tmp;
-	stack_a->index = index_tmp;
-	ft_putstr_fd("ra\n", 1);
-}
-
-void	ft_rra(t_list *stack_a)
-{
-	int	content_tmp;
-	int	index_tmp;
-
-	stack_a = ft_lstlast(stack_a);
-	content_tmp = stack_a->content;
-	index_tmp = stack_a->index;
-	while (stack_a->prev)
-	{
-		stack_a->content = stack_a->prev->content;
-		stack_a->index = stack_a->prev->index;
-		stack_a = stack_a->prev;
-	}
-	stack_a->content = content_tmp;
-	stack_a->index = index_tmp;
-	ft_putstr_fd("rra\n", 1);
-}
 
 void	ft_resolution3(t_list *stack_a)
 {
@@ -80,4 +36,20 @@ void	ft_resolution3(t_list *stack_a)
 		ft_rra(stack_a);
 	else
 		return ;
+}
+
+void	ft_resolution4(t_list *stack_a, t_list *stack_b)
+{
+	ft_push_b(&stack_a, &stack_b);
+	ft_resolution3(stack_a);
+	while (ft_lstsize(stack_a) < 4)
+	{
+		if ((stack_b->index == stack_a->index - 1)
+			|| (stack_b->index == 3 && stack_a->index == 0))
+			ft_push_a(&stack_b, &stack_a);
+		else
+			ft_ra(stack_a);
+	}
+	while (stack_a->index != 0)
+		ft_ra(stack_a);
 }
