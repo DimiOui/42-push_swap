@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 17:19:57 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 18:01:41 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/04 15:17:09 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_check_sign(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == '-')
+		if (str[i] == '-' || str[i] == '+')
 		{
 			if (str[i + 1] >= '0' && str[i + 1] <= '9')
 				i++;
@@ -71,7 +71,8 @@ int	ft_check_nb(int i, char *str)
 			else
 				return (0);
 		}
-		i++;
+		else
+			i++;
 	}
 	if (check == 0)
 		return (0);
@@ -100,6 +101,10 @@ int	ft_check_double(int ac, char **av)
 	}
 	return (1);
 }
+
+/* ************************************************************************** */
+/* atoi_strict also checks if it's an int, check libft for more informations  */
+/* ************************************************************************** */
 
 int	ft_check_order(int ac, char **av)
 {

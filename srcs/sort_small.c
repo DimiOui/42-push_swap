@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 01:20:59 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 18:01:51 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/04 14:42:00 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,33 @@ void	ft_resolution5(t_list *stack_a, t_list *stack_b)
 	else
 		while (stack_a->index)
 			ft_rra(stack_a);
+}
+
+void	ft_radix(t_list *stack_a, t_list *stack_b, int size)
+{
+	int	max_num;
+	int	max_bits;
+	int	i;
+	int	j;
+
+	max_num = size - 1;
+	max_bits = 0;
+	while ((max_num >> max_bits) != 0)
+		max_bits++;
+	i = 0;
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if ((((stack_a->index) >> i) & 1) == 1)
+				ft_ra(stack_a);
+			else
+				ft_push_b(&stack_a, &stack_b);
+			j++;
+		}
+		while (stack_b)
+			ft_push_a(&stack_b, &stack_a);
+		i++;
+	}
 }

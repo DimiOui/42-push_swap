@@ -6,7 +6,7 @@
 /*   By: dimioui <dimioui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:31:00 by dimioui           #+#    #+#             */
-/*   Updated: 2022/02/02 18:00:07 by dimioui          ###   ########.fr       */
+/*   Updated: 2022/02/04 14:41:56 by dimioui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	ft_push_linkexists(t_list **stack_a, t_list **stack_b);
 void	ft_resolution3(t_list *stack_a);
 void	ft_resolution4(t_list *stack_a, t_list *stack_b);
 void	ft_resolution5(t_list *stack_a, t_list *stack_b);
+void	ft_radix(t_list *stack_a, t_list *stack_b, int size);
 
 #endif
