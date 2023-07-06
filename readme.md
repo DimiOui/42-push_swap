@@ -1,81 +1,43 @@
-Initialise 2 stacks (stack a, stack b)
+# Pushswap
 
-Stack a is initialized as an argument of the push_swap program
-first argument is on top of the stack
-Program displays the smallest list of instructions possible to sort the stack a (with smallest on top)
+This project implements the pushswap sorting algorithm using Radix sort. The goal is to sort a stack of integers using a limited set of operations, namely "push" and "swap." Radix sort is an efficient sorting algorithm that works by distributing numbers into different buckets based on their digits, and then repeatedly sorting the numbers by each digit position.
 
-----------------------------------------------------------------------------------
-Instruction set :
+## Radix Sort Implementation
 
-sa : swap a - swap the first 2 elements at the top of stack a. Do nothing if there
-is only one or no elements).
+Here is a brief overview of the Radix sort algorithm:
 
-sb : swap b - swap the first 2 elements at the top of stack b. Do nothing if there
-is only one or no elements).
+1. Determine the maximum number of digits in the input array to determine the number of iterations.
+2. Iterate through each digit position from the least significant digit to the most significant digit.
+3. Create ten buckets (0-9) to hold the numbers based on the current digit.
+4. Distribute the numbers into the buckets based on the current digit.
+5. Collect the numbers from the buckets in the order of the bucket index (0-9).
+6. Repeat steps 4 and 5 for each digit position.
+7. The numbers in the stack are now sorted in ascending order.
 
-ss : sa and sb at the same time.
+## Usage
 
-pa : push a - take the first element at the top of b and put it at the top of a. Do
-nothing if b is empty.
+To use `pushswap`, follow these steps:
 
-pb : push b - take the first element at the top of a and put it at the top of b. Do
-nothing if a is empty.
+1. Clone and compile the project. For example:
+```bash
+git clone <project-url>
+make
+```
 
-ra : rotate a - shift up all elements of stack a by 1. The first element becomes
-the last one.
+2. Run the compiled executable, providing the list of integers as command-line arguments. For example:
+```bash
+./pushswap 5 2 9 1 3
+```
 
-rb : rotate b - shift up all elements of stack b by 1. The first element becomes
-the last one.
+3. The program will output the sequence of operations needed to sort the stack. For example:
+```bash
+sa pb pb sa pa pa
+```
 
-rr : ra and rb at the same time.
+4. The stack will be sorted at the end, and the program will exit.
 
-rra : reverse rotate a - shift down all elements of stack a by 1. The last element
-becomes the first one.
-
-rrb : reverse rotate b - shift down all elements of stack b by 1. The last element
-becomes the first one.
-
-rrr : rra and rrb at the same time.
-
------------------------------------------------------------------------------------
-
-Instructions must be separated by a \n.
-
-Must implement an error system : must display Error\n
-
-Ressources :
+## Ressources :
 
 https://github.com/VBrazhnik/Push_swap/wiki/Algorithm
 https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
 https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
-
------------------------------------------------------------------------------------
-
-Sorting a list of 3 random numbers :
-
-./push_swap 2 3 1
-
-Here we have 3 arguments in our push_swap program.
-Might want to parse each number and put them on stack A like :
-
-Check the input (the args).
-```
-if only one arg ex : "2 3 1", it's an error. Each arg should be a number.
-if arg looks like : 2 3 1, then each argv[] is a number.
-
-// need to check if numbers are correct, no duplicates etc (done after loading into stack A)...
-// need to handle errors that could look like this 2- 3 1, 2  3 1,  2 - 3 1, etc...
-```
-
-Once the input has been checked, load it into stack A.
-Once stack A is loaded we check duplicates.
-Once stack A is loaded, and we checked the duplicates, check if the list is sorted. If so, the program ends. (```A_is_sorted()```)
-```
-if (stack_A <= 5)
-	sort_small_stack;
-else
-	sort_big_stack;
-```
-
-For the algo, I'll use the Radx sort (check https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
-Check merge sorting algorithm and quick sorting algorithm too
