@@ -38,6 +38,6 @@ sa pb pb sa pa pa
 
 ## Ressources :
 
-https://github.com/VBrazhnik/Push_swap/wiki/Algorithm
-https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
-https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
+- https://github.com/VBrazhnik/Push_swap/wiki/Algorithm
+- https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
+- https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e
